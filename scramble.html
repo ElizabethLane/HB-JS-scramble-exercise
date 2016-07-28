@@ -18,10 +18,17 @@
             var randomWord = WORDS[randomIndex];
             // Grab a random word from the WORDS array
             var randomScrambled = SCRAMBLED[randomIndex];
-            // Grab the corresponding scrambled word from the SCRAMBLED array
-            var userGuess = prompt("Unscrambled this word:" + "       " + randomScrambled);
+            Grab the corresponding scrambled word from the SCRAMBLED array
+            function userGuess(){
+                var userPrompt = prompt("Unscrambled this word:" + "       " + randomScrambled);
+                return userPrompt.toLowerCase();
+            }
+
+            var savedGuess = userGuess()
+
+            // console.log(prompt("Hello").toLowerCase());
             // prompt the user to guess the original word when given the scrambled word
-            if (userGuess != randomWord){
+            if (savedGuess != randomWord){
                 alert("You've guessed wrong, the word is " + randomWord);
             } else {
                 alert("Yay, congrats you got it right! Good for you!")
